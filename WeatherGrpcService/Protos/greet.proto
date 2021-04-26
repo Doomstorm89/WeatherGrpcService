@@ -1,0 +1,25 @@
+syntax = "proto3";
+
+option csharp_namespace = "WeatherGrpcService";
+package weatherGetter;
+
+
+// The greeting service definition.
+service Weather {
+  // Sends a greeting
+  rpc GetWeather (WeatherRequest) returns (WeatherReply);//{
+    //option (api.openweathermap.org) = {
+    //    get: "/data/2.5/weather?q={name}&appid=2e339f540b2fd338f75e7208a1ba8023"
+    //    };
+    //}
+}
+
+// The request message containing the user's name.
+message WeatherRequest {
+  string name = 1;
+}
+
+// The response message containing the greetings.
+message WeatherReply {
+  string message = 1;
+}
